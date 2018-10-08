@@ -19,7 +19,7 @@ public class JavaSoundRecorder {
   static final long RECORD_TIME = 60000; // 1 minute
 
   // path of the wav file
-  File wavFile = new File("P:/RecordAudio.wav");
+  File wavFile = new File("P:\\PROG\\workspace\\726.wav");
 
   // format of audio file
   AudioFileFormat.Type fileType = AudioFileFormat.Type.WAVE;
@@ -31,17 +31,12 @@ public class JavaSoundRecorder {
    * Defines an audio format
    */
   AudioFormat getAudioFormat() {
-    //    float sampleRate = 16000;
-    //    int sampleSizeInBits = 8;
-    //    int channels = 2;
-    //    boolean signed = true;
-    //    boolean bigEndian = true;
-    //    AudioFormat format = new AudioFormat(sampleRate, sampleSizeInBits, channels, signed, bigEndian);
-    //    return format;
-    AudioFormat format = null;
-
-    format = ((DataLine.Info)(AudioSystem.getMixer(AudioSystem.getMixerInfo()[0]).getSourceLineInfo()[0])).getFormats()[];
-    
+    float sampleRate = 16000;
+    int sampleSizeInBits = 8;
+    int channels = 2;
+    boolean signed = true;
+    boolean bigEndian = true;
+    AudioFormat format = new AudioFormat(sampleRate, sampleSizeInBits, channels, signed, bigEndian);
     return format;
   }
 
